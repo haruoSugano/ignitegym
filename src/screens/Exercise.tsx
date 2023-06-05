@@ -1,5 +1,5 @@
 import { TouchableOpacity } from "react-native";
-import { Box, HStack, Heading, Icon, Image, Text, VStack } from "native-base";
+import { Box, HStack, Heading, Icon, Image, ScrollView, Text, VStack } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 
@@ -43,40 +43,42 @@ export function Exercise() {
                 </HStack>
             </VStack>
 
-            <VStack p={8}>
-                <Image
-                    w="full"
-                    h={80}
-                    source={{ uri: "https://www.pontotel.com.br/wp-content/uploads/2021/12/auxilio-academia.webp" }}
-                    alt="Nome do exercícios"
-                    mb={3}
-                    resizeMode="cover"
-                    rounded="lg"
-                    overflow="hidden"
-                />
-
-                <Box bg="gray.600" rounded="md" pb={4} px={4}>
-                    <HStack alignItems="center" justifyContent="space-around" mb={5} mt={4}>
-                        <HStack>
-                            <SeriesSvg />
-                            <Text color="gray.200" ml="2">
-                                3 séries
-                            </Text>
-                        </HStack>
-
-                        <HStack>
-                            <RepetionsSvg />
-                            <Text color="gray.200" ml="2">
-                                12 repetições
-                            </Text>
-                        </HStack>
-                    </HStack>
-
-                    <Button 
-                        title="Marcar como realizado"
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <VStack p={8}>
+                    <Image
+                        w="full"
+                        h={80}
+                        source={{ uri: "https://www.pontotel.com.br/wp-content/uploads/2021/12/auxilio-academia.webp" }}
+                        alt="Nome do exercícios"
+                        mb={3}
+                        resizeMode="cover"
+                        rounded="lg"
+                        overflow="hidden"
                     />
-                </Box>
-            </VStack>
+
+                    <Box bg="gray.600" rounded="md" pb={4} px={4}>
+                        <HStack alignItems="center" justifyContent="space-around" mb={5} mt={4}>
+                            <HStack>
+                                <SeriesSvg />
+                                <Text color="gray.200" ml="2">
+                                    3 séries
+                                </Text>
+                            </HStack>
+
+                            <HStack>
+                                <RepetionsSvg />
+                                <Text color="gray.200" ml="2">
+                                    12 repetições
+                                </Text>
+                            </HStack>
+                        </HStack>
+
+                        <Button
+                            title="Marcar como realizado"
+                        />
+                    </Box>
+                </VStack>
+            </ScrollView>
         </VStack>
     );
 }
